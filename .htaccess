@@ -1,5 +1,21 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine on
-  RewriteRule ^$ public/ [L]
-  RewriteRule (.*) public/$1 [L]
-</IfModule>
+Options -Indexes
+RewriteEngine on
+
+RewriteBase /grandboatsheroku/
+
+RewriteCond %{REQUEST_URI} ^/grandboatsheroku/admin(.+)$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ admin/index.php?url=$1 [QSA,L]
+
+# RewriteRule ^$ admin/ [L]
+# RewriteRule (.*) admin/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
