@@ -1,49 +1,32 @@
-/*!
- * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
- */
-body {
-  overflow-x: hidden;
+.cur-p {
+  cursor: pointer;
 }
 
-#sidebar-wrapper {
-  min-height: 100vh;
-  margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
+ul.languages {
+  list-style: none;
 }
 
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
+ul.languages li.is-invalid {
+  border: 5px solid #dc3545;
 }
 
-#sidebar-wrapper .list-group {
-  width: 15rem;
+
+ul.languages li.active {
+  background: var(--gray);
 }
 
-#page-content-wrapper {
-  min-width: 100vw;
+ul.languages li {
+  border-radius: 25px;
 }
 
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
+.languages svg {
+    width: 40px;
 }
 
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
+#languages > div {
+  display: none;
+} 
 
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
+#languages > div.active {
+  display: block !important;
 }

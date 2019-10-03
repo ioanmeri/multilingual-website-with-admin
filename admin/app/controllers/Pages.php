@@ -13,8 +13,6 @@
 				'posts' => $posts
 			];
 
-			
-
 			$this->view('pages/index', $data);
 		}
 

@@ -5,11 +5,10 @@
 		}
 
 		public function index(){
-			$data = [
-				
-			];
+			$data = [];
 
 			$this->view('pages/index', $data);
 		}
+
 	}
 

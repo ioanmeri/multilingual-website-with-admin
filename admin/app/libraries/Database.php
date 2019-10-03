@@ -33,6 +33,22 @@
 			}
 		}
 
+		public function beginTransaction(){
+			$this->dbh->beginTransaction();
+		}
+
+		public function commitTransaction(){
+			$this->dbh->commit();
+		}
+
+		public function rollbackTransaction(){
+			$this->dbh->rollBack();
+		}
+
+		public function getLastInsertId(){
+			return $this->dbh->lastInsertId();
+		}
+
 		// Prepare statement with query
 		public function query($sql){
 			$this->stmt = $this->dbh->prepare($sql);
@@ -80,4 +96,5 @@
 		public function rowCount(){
 			return $this->stmt->rowCount();
 		}
+
 	}

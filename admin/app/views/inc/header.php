@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Simple Sidebar - Start Bootstrap Template</title>
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <title><?php echo SITENAME; ?></title>
+  <link href="<?php echo URLROOT; ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo URLROOT; ?>/css/simple-sidebar.css" rel="stylesheet">
+  <link href="<?php echo URLROOT; ?>/css/style.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="d-flex" id="wrapper">

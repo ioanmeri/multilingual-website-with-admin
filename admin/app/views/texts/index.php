@@ -1,6 +1,11 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-      <div class="container-fluid">
-        <h1 class="mt-4">Texts</h1>
+  	<div class="d-flex justify-content-between ml-3 mr-3">
+		<h1 class="mt-4">Texts</h1>
+  		<a href="<?php echo URLROOT; ?>/texts/add" class="btn btn-primary align-self-center">
+			<i class="fa fa-pencil"></i> Add
+		</a>
+  	</div>
+  	<div class="container-fluid">
         <div class="row">
 		<?php foreach($data['texts'] as $text) : ?>
 			<div class="col-md-4 card card-body m-3">
@@ -13,6 +18,5 @@
 			</div>
 		<?php endforeach; ?>
 		</div>
-      </div>
-    </div>
+  	</div>
 <?php require APPROOT . '/views/inc/footer.php'; ?>
