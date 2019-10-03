@@ -7,7 +7,7 @@
 		}
 
 		public function getLanguages(){
-			$this->db->query('SELECT * FROM languages ORDER BY native  DESC');
+			$this->db->query('SELECT * FROM languages ORDER BY sort_order');
 
 			return $this->db->resultSet();
 		}

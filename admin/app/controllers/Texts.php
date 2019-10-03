@@ -15,6 +15,22 @@
 			$this->view('texts/index', $data);
 		}
 
+		public function show($id){
+			$languages = $this->languageModel->getLanguages();
+
+			$text = $this->textModel->getTextById($id);
+
+			$data = [
+				'text' => $text,
+				'languages' => $languages
+			];
+
+			// print_r($data['text']);
+			// die();
+
+			$this->view('texts/show', $data);
+		}
+
 		public function add(){
 			$languages = $this->languageModel->getLanguages();
 			$title = [];

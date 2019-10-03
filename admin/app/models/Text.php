@@ -7,13 +7,29 @@
 		}
 
 		public function getTexts($lang_id = 1){
-			$this->db->query('SELECT * FROM texts a
+			$this->db->query('SELECT *, a.id as textId 
+							  FROM texts a
 							  INNER JOIN texts_desc b ON
 							  a.id=b.text_id
 							  WHERE b.lang_id =:lang_id
 							');
 
 			$this->db->bind(':lang_id', $lang_id);
+
+			return $this->db->resultSet();
+		}
+
+		public function getTextById($id){
+			$this->db->query('SELECT a.*, b.* FROM texts a
+							  INNER JOIN texts_desc b ON
+							  a.id=b.text_id
+							  INNER JOIN languages c ON
+							  c.id=b.lang_id
+							  WHERE a.id =:id
+							  ORDER BY c.sort_order
+							');
+
+			$this->db->bind(':id', $id);
 
 			return $this->db->resultSet();
 		}
