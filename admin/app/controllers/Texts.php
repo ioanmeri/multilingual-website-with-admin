@@ -157,4 +157,18 @@
 				$this->view('texts/edit', $data);
 			}
 		}
+
+
+		public function delete($id){
+			if($_SERVER['REQUEST_METHOD'] == 'POST'){
+				if($this->textModel->deleteText($id)){
+					flash('text_message', 'Text Removed', 'alert alert-success mt-4 ml-3 mr-3 mb-0 hide-2');
+					redirect('texts');
+				}else {
+					die('Something went wrong');
+				}
+			}else {
+				redirect('texts');
+			}
+		}
 	}
