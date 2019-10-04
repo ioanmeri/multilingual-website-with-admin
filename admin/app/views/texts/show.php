@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+	<?php flash('text_message'); ?>
 	<div class="m-3">
 		<a href="<?php echo URLROOT; ?>/texts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>		
 		<div class="card card-body bg-light mt-3">

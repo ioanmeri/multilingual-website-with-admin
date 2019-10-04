@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+	<?php flash('text_message'); ?>
   	<div class="d-flex justify-content-between ml-3 mr-3">
 		<h1 class="mt-4">Texts</h1>
   		<a href="<?php echo URLROOT; ?>/texts/add" class="btn btn-primary align-self-center">

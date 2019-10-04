@@ -80,4 +80,39 @@
 			    return false;
 			}
 		}
+
+		public function updateText($data){
+			echo 'data to update';
+			print_r($data);
+			try {
+				$this->db->beginTransaction();    
+
+			    $sql = 'UPDATE texts_desc SET title =:title, body = :body WHERE lang_id = :lang_id AND text_id = :text_id';
+			    $this->db->query($sql);
+
+			    // Loop and execute
+			    foreach ($data['title'] as $langId => $title){
+			    	$this->db->bind(':title', $title);
+			    	$this->db->bind(':body', $data['body'][$langId]);
+			    	$this->db->bind(':lang_id', $langId);
+			    	$this->db->bind(':text_id', $data['id']);
+			    	$this->db->execute();
+			    }
+			   // Commit Transaction
+			    $this->db->commitTransaction();
+
+			    return true;
+
+			} catch (PDOException $e) {
+
+			    // Rollback Transaction
+			    $this->db->rollbackTransaction();
+
+			    // make sense of an exception thrown
+			    throw $e;
+
+			    die();
+
+			}
+		}
 	}
