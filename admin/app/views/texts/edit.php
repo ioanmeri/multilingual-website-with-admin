@@ -7,10 +7,7 @@
 			<form action="<?php echo URLROOT; ?>/texts/edit/<?php echo $data['id']; ?>" method="post">
 				<ul class="languages d-flex p-0 align-items-center" id="choose-language">
 					<?php foreach ($data['languages'] as $key => $language): ?>
-					<li class="mr-2 p-1 cur-p 
-						<?php echo $key == 0 ? 'active' : ''; ?> 
-						<?php echo !(empty($data['title_err'][$language->id]) && empty($data['body_err'][$language->id])) ? 'is-invalid' : ''; ?>"
-						data-choose-language=<?php echo $language->id; ?>>
+					<li class="mr-2 p-1 cur-p <?php echo $key == 0 ? 'active' : ''; ?><?php echo !(empty($data['title_err'][$language->id]) && empty($data['body_err'][$language->id])) ? 'is-invalid' : ''; ?>" data-choose-language=<?php echo $language->id; ?>>
 						<?php echo $language->image; ?>	
 					</li>
 					<?php endforeach ?>

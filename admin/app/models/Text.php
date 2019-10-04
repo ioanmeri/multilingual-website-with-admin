@@ -49,7 +49,7 @@
 			    $textDescQuery = 'INSERT INTO texts_desc (text_id, lang_id, title, body) VALUES';
 
 			    $count = 0;
-			    foreach ($data['languages'] as $productId => $language ) {
+			    foreach ($data['title'] as $langId => $title){
 			        $textDescQuery .= ' (:text_id' . $count . ', :lang_id' . $count . ', :title' . $count . ', :body'.$count.'),';    
 			        ++$count;
 			    }
@@ -59,11 +59,11 @@
 
 			    //bind
 			    $c = 0;
-			    foreach ($data['languages'] as $productId => $language ) {
+			     foreach ($data['title'] as $langId => $title){
 			    	$this->db->bind(':text_id'.$c, (int)$textId);
-			    	$this->db->bind(':lang_id'.$c, (int)$language->id);
-			    	$this->db->bind(':title'.$c, (string)$data['title'][$language->code]);
-			    	$this->db->bind(':body'.$c, (string)$data['body'][$language->code]);
+			    	$this->db->bind(':lang_id'.$c, (int)$langId);
+			    	$this->db->bind(':title'.$c, (string)$title);
+			    	$this->db->bind(':body'.$c, (string)$data['body'][$langId]);
 			    	++$c;
 			    }
 
@@ -82,8 +82,6 @@
 		}
 
 		public function updateText($data){
-			echo 'data to update';
-			print_r($data);
 			try {
 				$this->db->beginTransaction();    
 

@@ -1,7 +1,7 @@
 # multilingual-website-with-admin
 
 ## Requirements
-1. The website much have an /admin directory
+1. The website must have an /admin directory
     1. admin users can log in
     1. admin users can sign up with a secret code
     

@@ -12,7 +12,7 @@ ul.languages li.is-invalid {
 
 
 ul.languages li.active {
-  background: var(--gray);
+  background: var(--orange);
 }
 
 ul.languages li {
