@@ -30,3 +30,9 @@ ul.languages li {
 #languages > div.active {
   display: block !important;
 }
+
+
+/* Languages */
+.section-languages svg {
+	max-width: 5rem;
+}
