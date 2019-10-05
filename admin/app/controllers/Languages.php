@@ -14,4 +14,14 @@
 			$this->view('languages/index', $data);
 		}
 
+		public function show($id){
+			$language = $this->languageModel->getLanguageById($id);
+
+			$data = [
+				'language' => $language
+			];
+
+			$this->view('languages/show', $data);
+		}
+
 	}

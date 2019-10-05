@@ -6,9 +6,18 @@
 			$this->db = new Database;
 		}
 
-		public function getLanguages(){
-			$this->db->query('SELECT * FROM languages ORDER BY sort_order');
+		public function getLanguages($language_id = 1){
+			$this->db->query('SELECT * FROM languages');
+			$this->db->bind(':language_id', $language_id);
 
 			return $this->db->resultSet();
 		}
+
+		public function getLanguageById($language_id){
+			$this->db->query('SELECT * FROM languages WHERE id=:language_id');
+			$this->db->bind(':language_id', $language_id);
+
+			return $row = $this->db->single();;
+		}
+
 	}
