@@ -1,8 +1,9 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 	<section class="section-languages pl-3 pr-3">
 		<?php flash('text_message'); ?>
-		<a href="<?php echo URLROOT; ?>/languages" class="btn btn-light mt-3"><i class="fa fa-backward"></i> Back</a>	
-		<h1 class="mt-4 mb-4 text-capitalize"><?php echo $data['language']->title . ' language'; ?></h1>
+		<a href="<?php echo URLROOT; ?>/languages" class="btn btn-light mt-3"><i class="fa fa-backward"></i> Back</a>
+		<h1 class="mt-4">Language</h1>	
+		<h2 class="mt-4 mb-4 text-capitalize"><?php echo $data['language']->title; ?></h2>
 		<div class="container-fluid bg-light mb-4">
 			<div class="row">
 				<div class="col-md-3 col-sm-6 p-3">
