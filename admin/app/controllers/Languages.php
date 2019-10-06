@@ -31,6 +31,7 @@
 				'language' => $language,
 				'title_err' => '',
 				'code_err' => '',
+				'sort_order_err' => '',
 			];
 
 
@@ -40,7 +41,7 @@
 
 				$data['language']->title =  trim($_POST['title']);
 				$data['language']->code =  trim($_POST['code']);
-				$data['language']->sort_order =  trim($_POST['sort_order']);
+			
 
 				if(empty($data['language']->title)){
 					$data['title_err'] = 'Title cannot be empty';
@@ -53,8 +54,13 @@
 				}else{
 					$data['language']->active = 0;
 				}
+				if($_POST['sort_order'] == NULL){
+					$data['sort_order_err'] = 'Sort order cannot be empty';
+				}else{
+						$data['language']->sort_order =  trim($_POST['sort_order']);
+				}
 
-				if(empty($data['title_err']) && empty($data['code_err'])){
+				if(empty($data['title_err']) && empty($data['code_err']) && empty($data['sort_order'])){
 					die('success');
 					if($this->languageModel->updateLanguage($data)){
 						flash('text_message', 'Text Updated', 'alert alert-success mt-4 ml-3 mr-3 mb-0 hide-2');
