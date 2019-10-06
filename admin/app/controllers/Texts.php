@@ -98,7 +98,7 @@
 
 			// Init Data
 			$data = [
-				'id' => $text[0]->text_id,
+				'id' => $text[0]->texts_id,
 				'languages' => $languages,
 				'user_id' => $_SESSION['user_id'],
 			];

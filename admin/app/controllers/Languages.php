@@ -82,7 +82,7 @@
 				'title' => '',
 				'code' => '',
 				'sort_order' => '',
-				'active' => 1,
+				'active' => 0,
 				'title_err' => '',
 				'code_err' => '',
 				'sort_order_err' => '',

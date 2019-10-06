@@ -10,7 +10,7 @@
 			$this->db->query('SELECT *, a.id as textId 
 							  FROM texts a
 							  INNER JOIN texts_desc b ON
-							  a.id=b.text_id
+							  a.id=b.texts_id
 							  WHERE b.lang_id =:lang_id
 							');
 
@@ -22,7 +22,7 @@
 		public function getTextById($id){
 			$this->db->query('SELECT a.*, b.* FROM texts a
 							  INNER JOIN texts_desc b ON
-							  a.id=b.text_id
+							  a.id=b.texts_id
 							  INNER JOIN languages c ON
 							  c.id=b.lang_id
 							  WHERE a.id =:id
@@ -42,15 +42,15 @@
 			    // $this->db->bind(':image', '');
 			    $this->db->execute();
 			    
-			    // Get the generated `text_id`
+			    // Get the generated `texts_id`
 			    $textId = $this->db->getLastInsertId();
 
 			    // Construct the query for inserting the products of the order
-			    $textDescQuery = 'INSERT INTO texts_desc (text_id, lang_id, title, body) VALUES';
+			    $textDescQuery = 'INSERT INTO texts_desc (texts_id, lang_id, title, body) VALUES';
 
 			    $count = 0;
 			    foreach ($data['title'] as $langId => $title){
-			        $textDescQuery .= ' (:text_id' . $count . ', :lang_id' . $count . ', :title' . $count . ', :body'.$count.'),';    
+			        $textDescQuery .= ' (:texts_id' . $count . ', :lang_id' . $count . ', :title' . $count . ', :body'.$count.'),';    
 			        ++$count;
 			    }
 
@@ -60,7 +60,7 @@
 			    //bind
 			    $c = 0;
 			     foreach ($data['title'] as $langId => $title){
-			    	$this->db->bind(':text_id'.$c, (int)$textId);
+			    	$this->db->bind(':texts_id'.$c, (int)$textId);
 			    	$this->db->bind(':lang_id'.$c, (int)$langId);
 			    	$this->db->bind(':title'.$c, (string)$title);
 			    	$this->db->bind(':body'.$c, (string)$data['body'][$langId]);
@@ -85,7 +85,7 @@
 			try {
 				$this->db->beginTransaction();    
 
-			    $sql = 'UPDATE texts_desc SET title =:title, body = :body WHERE lang_id = :lang_id AND text_id = :text_id';
+			    $sql = 'UPDATE texts_desc SET title =:title, body = :body WHERE lang_id = :lang_id AND texts_id = :texts_id';
 			    $this->db->query($sql);
 
 			    // Loop and execute
@@ -93,7 +93,7 @@
 			    	$this->db->bind(':title', $title);
 			    	$this->db->bind(':body', $data['body'][$langId]);
 			    	$this->db->bind(':lang_id', $langId);
-			    	$this->db->bind(':text_id', $data['id']);
+			    	$this->db->bind(':texts_id', $data['id']);
 			    	$this->db->execute();
 			    }
 			   // Commit Transaction
