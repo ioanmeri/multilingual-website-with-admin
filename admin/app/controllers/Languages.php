@@ -61,9 +61,9 @@
 				}
 
 				if(empty($data['title_err']) && empty($data['code_err']) && empty($data['sort_order'])){
-					die('success');
+					unset($data['language']->image);
 					if($this->languageModel->updateLanguage($data)){
-						flash('text_message', 'Text Updated', 'alert alert-success mt-4 ml-3 mr-3 mb-0 hide-2');
+						flash('text_message', 'Language Updated', 'alert alert-success mt-4 mb-0 hide-2');
 						redirect('languages/show/' . $data['language']->id);
 					}else{
 						die('Something went wrong');
@@ -71,7 +71,6 @@
 				}else{
 						$this->view('languages/edit', $data);
 				}
-
 			}else{
 				$this->view('languages/edit', $data);
 			}

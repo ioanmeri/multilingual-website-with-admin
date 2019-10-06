@@ -17,7 +17,7 @@
 
 
 		public function show($id){
-			$languages = $this->languageModel->getLanguages();
+			$languages = $this->languageModel->getActiveLanguages();
 			$text = $this->textModel->getTextById($id);
 
 			$data = [
@@ -30,7 +30,7 @@
 
 
 		public function add(){
-			$languages = $this->languageModel->getLanguages();
+			$languages = $this->languageModel->getActiveLanguages();
 
 			// Init Data
 			$data = [
@@ -94,7 +94,7 @@
 
 		public function edit($id){
 			$text = $this->textModel->getTextById($id);
-			$languages = $this->languageModel->getLanguages();
+			$languages = $this->languageModel->getActiveLanguages();
 
 			// Init Data
 			$data = [
