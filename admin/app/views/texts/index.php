@@ -2,7 +2,7 @@
 	<?php flash('text_message'); ?>
   	<div class="d-flex justify-content-between ml-3 mr-3">
 		<h1 class="mt-4">Texts</h1>
-  		<a href="<?php echo URLROOT; ?>/tables/add" class="btn btn-primary align-self-center">
+  		<a href="<?php echo URLROOT; ?>/texts/add" class="btn btn-primary align-self-center">
 			<i class="fa fa-pencil"></i> Add
 		</a>
   	</div>

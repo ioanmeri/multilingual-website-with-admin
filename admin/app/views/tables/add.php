@@ -1,37 +1,36 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-<!-- 	<div class="m-3">
-		<a href="<?php echo URLROOT; ?>/texts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>		
-		<div class="card card-body bg-light mt-3">
-			<h2>Add a Static Text</h2>
-			<p>Create a text post with this form</p>
-			<form action="<?php echo URLROOT; ?>/texts/add" method="post">
-				<ul class="languages d-flex p-0 align-items-center" id="choose-language">
-					<?php foreach ($data['languages'] as $key => $language): ?>
-					<li class="mr-2 p-1 cur-p <?php echo $key == 0 ? 'active' : ''; ?> <?php echo !(empty($data['title_err'][$language->id]) && empty($data['body_err'][$language->id])) ? 'is-invalid' : ''; ?>" data-choose-language=<?php echo $language->id; ?>>
-						<?php echo $language->image; ?>	
-					</li>
-					<?php endforeach ?>
-				</ul>
-				<div id="languages">
-					<?php $c = 0; ?>
-					<?php foreach ($data['languages'] as $key => $language): ?>
-						<div data-language=<?php echo $language->id; ?> class="<?php echo $key == 0 ? 'active' : ''; ?>">
-							<div class="form-group">
-								<label for="title_<?php echo $language->id; ?>">Title: <sup>*</sup></label>
-								<input type="text" name="title_<?php echo $language->id; ?>" class="form-control form-control-lg <?php echo (!empty($data['title_err'][$language->id])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['title'][$language->id]; ?>">
-								<span class="invalid-feedback"><?php echo $data['title_err'][$language->id]; ?></span>
-							</div>
-							<div class="form-group">
-								<label for="body_<?php echo $language->id; ?>">Body: <sup>*</sup></label>
-								<textarea name="body_<?php echo $language->id; ?>" class="form-control form-control-lg <?php echo (!empty($data['body_err'][$language->id])) ? 'is-invalid' : ''; ?>"><?php echo $data['body'][$language->id]; ?></textarea>
-								<span class="invalid-feedback"><?php echo $data['body_err'][$language->id]; ?></span>
-							</div>
-						</div>
-						<?php ++$c; ?>
-					<?php endforeach ?>	
+<section class="section-tables m-3 elegant-color">
+	<a href="<?php echo URLROOT; ?>/tables" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
+	<?php flash('text_message'); ?>
+	<h1 class="mt-3">Add Table</h1>
+	<p>Add a Database Table with the following form</p>
+
+	<div class="card">
+		<h4 class="bg-light px-2 py-3">Basic Table</h4>
+		<form action="<?php echo URLROOT ?>/tables/add" method="post" class="card-body">
+			<div class="d-flex align-items-center">
+				<div class="form-group mr-4" style="max-width: 12rem;">
+					<label for="prefix">Prefix: <sup>*</sup></label>
+					<input type="text" name="prefix" class="form-control form-control-sm <?php echo empty($data['prefix_err']) ? '' : 'is-invalid'; ?>" value="<?php echo $data['prefix']; ?>">
+					<span class="invalid-feedback"><?php echo $data['prefix_err']; ?></span>
 				</div>
-				<input type="submit" class="btn btn-success" value="Submit">
-			</form>
-		</div>
-	</div> -->
+				<div class="form-group mr-4" style="max-width: 5rem;">
+					<label for="images">Images</label>
+					<input type="number" class="form-control form-control-sm" name="images" value="<?php echo $data['images']; ?>">
+					<span class="invalid-feedback"><?php echo $data['images']; ?></span>
+				</div>
+				<div class="custom-control custom-checkbox">
+				    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+				    <label class="custom-control-label" for="defaultUnchecked">Date Added</label>
+				</div>
+			</div>
+
+			<h4 class="mt-4">Multilingual fields</h4>
+			<input type="submit" value="Submit" class="btn btn-success mt-3">
+		</form>
+	</div>
+
+
+</section>
+
 <?php require APPROOT . '/views/inc/footer.php'; ?>
