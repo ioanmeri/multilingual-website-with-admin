@@ -8,16 +8,11 @@
 	<div class="card">
 		<h4 class="bg-light px-2 py-3">Basic Table</h4>
 		<form action="<?php echo URLROOT ?>/tables/add" method="post" class="card-body">
-			<div class="d-flex align-items-center">
+			<div class="basic fiealds d-flex align-items-center mb-4">
 				<div class="form-group mr-4" style="max-width: 12rem;">
 					<label for="prefix">Prefix: <sup>*</sup></label>
 					<input type="text" name="prefix" class="form-control form-control-sm <?php echo empty($data['prefix_err']) ? '' : 'is-invalid'; ?>" value="<?php echo $data['prefix']; ?>"  required="required">
 					<span class="invalid-feedback"><?php echo $data['prefix_err']; ?></span>
-				</div>
-				<div class="form-group mr-4" style="max-width: 5rem;">
-					<label for="images">Images</label>
-					<input type="number" class="form-control form-control-sm" name="images" min="0" max="10" value="<?php echo $data['images']; ?>">
-					<span class="invalid-feedback"><?php echo $data['images']; ?></span>
 				</div>
 				<div class="custom-control custom-checkbox">
 				    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
@@ -25,6 +20,35 @@
 				</div>
 			</div>
 			<div id="add-basic-fields">
+				<section class="images mb-4">
+					<h4><span class="mr-2"><i class="fa fa-image"></i></span>Images</h4>
+					<div class="images-rows">
+<!-- 						<div class="bg-light p-3 d-flex align-items-center flex-wrap mb-3">
+							<div class="form-group mr-4" style="max-width: 5rem;">
+								<label for="images">Number</label>
+								<input type="number" class="form-control form-control-sm" name="images" min="0" max="10" value="<?php echo $data['images']; ?>">
+								<span class="invalid-feedback"><?php echo $data['images']; ?></span>
+							</div>
+							<div class="custom-control custom-checkbox mr-4">
+							    <input type="checkbox" name="img_sm" class="custom-control-input" id="img_sm">
+							    <label class="custom-control-label" for="img_sm">Small</label>
+							</div>
+							<div class="custom-control custom-checkbox mr-4">
+							    <input type="checkbox" name="img_md" class="custom-control-input" id="img_md">
+							    <label class="custom-control-label" for="img_md">Medium</label>
+							</div>
+							<div class="custom-control custom-checkbox mr-4">
+							    <input type="checkbox" name="img_lg" class="custom-control-input" id="img_lg">
+							    <label class="custom-control-label" for="img_lg">Large</label>
+							</div>
+							<div class="custom-control custom-checkbox mr-4">
+							    <input type="checkbox" name="img_xl" class="custom-control-input" id="img_xl">
+							    <label class="custom-control-label" for="img_xl">Extra large</label>
+							</div>
+						</div> -->
+					</div>
+					<button type="button" class="btn btn-dark" id="add-remove-images"><i class="fa fa-plus"></i></button>
+				</section>
 				<section class="integers mb-4">
 					<h4>Integers</h4>
 					<div class="integers-rows container-fluid bg-dark px-2 py-3 mb-2">

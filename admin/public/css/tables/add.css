@@ -1,5 +1,6 @@
 section.integers .integers-rows,
-section.booleans .booleans-rows {
+section.booleans .booleans-rows,
+section.images .images-rows {
 	display: none;
 }
 

@@ -47,7 +47,12 @@
 				}
 
 			}else {
-				$data['scripts'] = ['tables/integers', 'tables/booleans'];
+				$scriptFolder = 'tables/add/';
+				$data['scripts'] = [
+					$scriptFolder.'integers', 
+					$scriptFolder.'booleans',
+					$scriptFolder.'images',
+				];
 				$data['style'] = 'tables/add';
 				$this->view('tables/add', $data);
 			}
