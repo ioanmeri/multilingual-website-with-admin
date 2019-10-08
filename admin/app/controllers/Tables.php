@@ -47,7 +47,7 @@
 				}
 
 			}else {
-				$data['scripts'] = ['tables/integers'];
+				$data['scripts'] = ['tables/integers', 'tables/booleans'];
 				$data['style'] = 'tables/add';
 				$this->view('tables/add', $data);
 			}

@@ -76,7 +76,7 @@
 								<h5 class="text-white pb-2 border-bottom">Remove</h5>
 							</div>
 						</div>
-						<div class="row d-flex align-items-center mb-4 mb-sm-3">
+<!-- 						<div class="row d-flex align-items-center mb-4 mb-sm-3">
 							<div class="col-sm-4 col-6 mb-2 mb-sm-0">
 								<input type="text" name="bool_title_1" class="form-control" placeholder="Boolean Title"  required="required">
 							</div>
@@ -89,7 +89,7 @@
 							<div class="col-sm-4 col-6">
 								<button type="button" class="btn btn-danger remove-boolean btn-sm"><i class="fa fa-minus"></i></button>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<button type="button" class="btn btn-dark" id="add-boolean"><i class="fa fa-plus"></i></button>
 				</section>

@@ -1,4 +1,4 @@
-function createRow($id){
+function createIntRow($id){
 	$markUp = `
 		<div class="row d-flex align-items-center mb-4 mb-sm-3">
 			<div class="col-sm-3 col-6 mb-2 mb-sm-0">
@@ -34,7 +34,7 @@ function createRow($id){
 
 		$integers++;
 
-		$('.integers-rows').append(createRow($integers));
+		$('.integers-rows').append(createIntRow($integers));
 		
 	})
 
