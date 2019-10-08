@@ -1,7 +1,9 @@
-section.integers .integers-rows {
+section.integers .integers-rows,
+section.booleans .booleans-rows {
 	display: none;
 }
 
-section.integers .integers-rows > .row:last-child{
+section.integers .integers-rows > .row:last-child,
+section.booleans .booleans-rows > .row:last-child {
 	margin-bottom: 0 !important;
 }
