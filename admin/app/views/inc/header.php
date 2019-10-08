@@ -10,6 +10,9 @@
   <link href="<?php echo URLROOT; ?>/css/simple-sidebar.css" rel="stylesheet">
   <link href="<?php echo URLROOT; ?>/css/style.css" rel="stylesheet">
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <?php if(isset($data['style'])){ ?>
+  <link href="<?php echo URLROOT; ?>/css/<?php echo $data['style']; ?>.css" rel="stylesheet">
+  <?php } ?>
 </head>
 <body>
   <div class="d-flex" id="wrapper">

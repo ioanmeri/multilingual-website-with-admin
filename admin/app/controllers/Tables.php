@@ -48,6 +48,8 @@
 				}
 
 			}else {
+				$data['script'] = 'tables/add';
+				$data['style'] = 'tables/add';
 				$this->view('tables/add', $data);
 			}
 		}

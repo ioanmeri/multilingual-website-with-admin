@@ -1,6 +1,9 @@
   </div>
   <script src="<?php echo URLROOT; ?>/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo URLROOT; ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <?php if(isset($data['script'])){ ?>
+  <script src="<?php echo URLROOT; ?>/public/js/<?php echo $data['script']; ?>.js"></script>
+  <?php } ?>
   <script>
   	function computePath(target){
 	  let els = []
