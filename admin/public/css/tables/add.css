@@ -1,7 +1,7 @@
-.add-integers .table {
+section.integers .integers-rows {
 	display: none;
 }
 
-section.add-integers .container-fluid > .row:last-child{
+section.integers .integers-rows > .row:last-child{
 	margin-bottom: 0 !important;
 }

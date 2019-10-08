@@ -25,9 +25,9 @@
 				</div>
 			</div>
 			<div id="add-basic-fields">
-				<section class="add-integers">
+				<section class="integers">
 					<h4>Integers</h4>
-					<div class="container-fluid bg-dark px-2 py-3">
+					<div class="integers-rows container-fluid bg-dark px-2 py-3 mb-2">
 						<div class="row d-none d-sm-flex">
 							<div class="col-sm-3 col-6 mb-2">
 								<h5 class="text-white pb-2 border-bottom">Column Title</h5>
@@ -42,7 +42,7 @@
 								<h5 class="text-white pb-2 border-bottom">Remove</h5>
 							</div>
 						</div>
-						<div class="row d-flex align-items-center mb-4 mb-sm-3">
+<!-- 						<div class="row d-flex align-items-center mb-4 mb-sm-3">
 							<div class="col-sm-3 col-6 mb-2 mb-sm-0">
 								<input type="text" name="int_title_1" class="form-control" placeholder="Column Title"  required="required">
 							</div>
@@ -58,14 +58,13 @@
 							<div class="col-sm-3 col-6">
 								<button class="btn btn-danger remove-integer btn-sm"><i class="fa fa-minus"></i></button>
 							</div>
-						</div>
+						</div> -->
 					</div>
-					<button type="button" class="btn btn-dark mt-3" id="add-integer"><i class="fa fa-plus"></i></button>
-					<div class="btn"></div>
+					<button type="button" class="btn btn-dark" id="add-integer"><i class="fa fa-plus"></i></button>
 				</section>
 			</div>
 			<h4 class="mt-4">Multilingual fields</h4>
-			<input type="submit" value="Submit" class="btn btn-success mt-3">
+			<input type="submit" value="Submit" class="btn btn-success mt-2">
 		</form>
 	</div>
 </section>
