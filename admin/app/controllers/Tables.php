@@ -25,11 +25,10 @@
 			if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-
+				print_r($_POST);
+				die();
 
 				$data['prefix'] = trim($_POST['prefix']);
-
-
 
 				if(empty($data['prefix'])){
 					$data['prefix_err'] = 'Table Prefix cannot be empty';
@@ -48,7 +47,7 @@
 				}
 
 			}else {
-				$data['script'] = 'tables/add';
+				$data['scripts'] = ['tables/integers'];
 				$data['style'] = 'tables/add';
 				$this->view('tables/add', $data);
 			}

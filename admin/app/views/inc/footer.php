@@ -4,6 +4,12 @@
   <?php if(isset($data['script'])){ ?>
   <script src="<?php echo URLROOT; ?>/public/js/<?php echo $data['script']; ?>.js"></script>
   <?php } ?>
+  <?php if(isset($data['scripts'])){ ?>
+  	<?php foreach ($data['scripts'] as $value): ?>
+  <script src="<?php echo URLROOT; ?>/public/js/<?php echo $value; ?>.js"></script>
+  	<?php endforeach ?>
+  <?php } ?>
+
   <script>
   	function computePath(target){
 	  let els = []
@@ -35,10 +41,6 @@
 		$('[data-language="' + $lang_id + '"]').addClass('active');
 		$('[data-choose-language="' + $lang_id + '"]').addClass('active');
 	})
-
-
-
-
 
   </script>
 </body>

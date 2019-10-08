@@ -43,7 +43,7 @@ function createRow($id){
 		e.preventDefault();
 		$(this).closest(".row").remove(); 
 
-		//if only the table head == .row length = 1
+		//if only the table head ==> is equal to .row(length) = 1
 		if($('.integers-rows .row').length === 1){
 			$('.integers-rows').hide();
 			$integers = 0;
