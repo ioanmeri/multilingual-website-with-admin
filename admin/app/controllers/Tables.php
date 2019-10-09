@@ -55,6 +55,7 @@
 					$scriptFolder.'mlFields',
 					$scriptFolder.'varchars',
 					$scriptFolder.'texts',
+					$scriptFolder.'longtexts',
 				];
 				$data['style'] = 'tables/add';
 				$this->view('tables/add', $data);

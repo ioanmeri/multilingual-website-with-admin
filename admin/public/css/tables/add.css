@@ -2,7 +2,8 @@ section.integers .integers-rows,
 section.booleans .booleans-rows,
 section.images .images-rows,
 section.varchars .varchars-rows,
-section.texts .texts-rows {
+section.texts .texts-rows,
+section.longtexts .longtexts-rows {
 	display: none;
 }
 

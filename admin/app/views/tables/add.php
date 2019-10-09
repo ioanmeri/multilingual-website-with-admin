@@ -115,6 +115,23 @@
 						</div>
 						<button type="button" class="btn btn-dark" id="add-text"><i class="fa fa-plus"></i></button>
 					</section>
+					<section class="longtexts mb-4">
+						<h4>Longtexts</h4>
+						<div class="longtexts-rows container-fluid bg-dark px-2 py-3 mb-2">
+							<div class="row d-none d-sm-flex">
+								<div class="col-sm-4 col-6 mb-2">
+									<h5 class="text-white pb-2 border-bottom">Longtext Title</h5>
+								</div>
+								<div class="col-sm-4 col-6 mb-2">
+									<h5 class="text-white pb-2 border-bottom">Default</h5>
+								</div>
+								<div class="col-sm-4 col-6 mb-2">
+									<h5 class="text-white pb-2 border-bottom">Remove</h5>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn btn-dark" id="add-longtext"><i class="fa fa-plus"></i></button>
+					</section>
 				</div>
 			</div>
 			<input type="submit" value="Submit" class="btn btn-success mt-2">
