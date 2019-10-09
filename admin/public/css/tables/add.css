@@ -1,8 +1,10 @@
 section.integers .integers-rows,
 section.booleans .booleans-rows,
 section.images .images-rows {
+/*#ml-fields {*/
 	display: none;
 }
+
 
 section.integers .integers-rows > .row:last-child,
 section.booleans .booleans-rows > .row:last-child {

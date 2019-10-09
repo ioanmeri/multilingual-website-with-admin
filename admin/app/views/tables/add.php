@@ -8,44 +8,22 @@
 	<div class="card">
 		<h4 class="bg-light px-2 py-3">Basic Table</h4>
 		<form action="<?php echo URLROOT ?>/tables/add" method="post" class="card-body">
-			<div class="basic fiealds d-flex align-items-center mb-4">
-				<div class="form-group mr-4" style="max-width: 12rem;">
-					<label for="prefix">Prefix: <sup>*</sup></label>
-					<input type="text" name="prefix" class="form-control form-control-sm <?php echo empty($data['prefix_err']) ? '' : 'is-invalid'; ?>" value="<?php echo $data['prefix']; ?>"  required="required">
-					<span class="invalid-feedback"><?php echo $data['prefix_err']; ?></span>
-				</div>
-				<div class="custom-control custom-checkbox">
-				    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-				    <label class="custom-control-label" for="defaultUnchecked">Date Added</label>
-				</div>
-			</div>
-			<div id="add-basic-fields">
+			<div id="basic-fields" class="mb-5">
+				<h3 class="mb-3">Basic Fields</h3>
+				<section class="basic-info d-flex align-items-center mb-2">
+					<div class="form-group mr-4" style="max-width: 12rem;">
+						<label for="prefix">Prefix: <sup>*</sup></label>
+						<input type="text" name="prefix" class="form-control form-control-sm <?php echo empty($data['prefix_err']) ? '' : 'is-invalid'; ?>" value="<?php echo $data['prefix']; ?>"  required="required">
+						<span class="invalid-feedback"><?php echo $data['prefix_err']; ?></span>
+					</div>
+					<div class="custom-control custom-checkbox">
+					    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+					    <label class="custom-control-label" for="defaultUnchecked">Date Added</label>
+					</div>
+				</section>
 				<section class="images mb-4">
 					<h4><span class="mr-2"><i class="fa fa-image"></i></span>Images</h4>
 					<div class="images-rows">
-<!-- 						<div class="bg-light p-3 d-flex align-items-center flex-wrap mb-3">
-							<div class="form-group mr-4" style="max-width: 5rem;">
-								<label for="images">Number</label>
-								<input type="number" class="form-control form-control-sm" name="images" min="0" max="10" value="<?php echo $data['images']; ?>">
-								<span class="invalid-feedback"><?php echo $data['images']; ?></span>
-							</div>
-							<div class="custom-control custom-checkbox mr-4">
-							    <input type="checkbox" name="img_sm" class="custom-control-input" id="img_sm">
-							    <label class="custom-control-label" for="img_sm">Small</label>
-							</div>
-							<div class="custom-control custom-checkbox mr-4">
-							    <input type="checkbox" name="img_md" class="custom-control-input" id="img_md">
-							    <label class="custom-control-label" for="img_md">Medium</label>
-							</div>
-							<div class="custom-control custom-checkbox mr-4">
-							    <input type="checkbox" name="img_lg" class="custom-control-input" id="img_lg">
-							    <label class="custom-control-label" for="img_lg">Large</label>
-							</div>
-							<div class="custom-control custom-checkbox mr-4">
-							    <input type="checkbox" name="img_xl" class="custom-control-input" id="img_xl">
-							    <label class="custom-control-label" for="img_xl">Extra large</label>
-							</div>
-						</div> -->
 					</div>
 					<button type="button" class="btn btn-dark" id="add-remove-images"><i class="fa fa-plus"></i></button>
 				</section>
@@ -66,23 +44,6 @@
 								<h5 class="text-white pb-2 border-bottom">Remove</h5>
 							</div>
 						</div>
-<!-- 						<div class="row d-flex align-items-center mb-4 mb-sm-3">
-							<div class="col-sm-3 col-6 mb-2 mb-sm-0">
-								<input type="text" name="int_title_1" class="form-control" placeholder="Column Title"  required="required">
-							</div>
-							<div class="col-sm-3 col-6 mb-2 mb-sm-0">
-								<input type="number" name="int_value_1" class="form-control" min="0" placeholder="Values">
-							</div>
-							<div class="col-sm-3 col-6">
-								<div class="custom-control custom-checkbox">
-								    <input type="checkbox" name="int_default_1" class="custom-control-input" id="int_default_1">
-								    <label class="custom-control-label text-white" for="int_default_1">NULL</label>
-								</div>
-							</div>
-							<div class="col-sm-3 col-6">
-								<button class="btn btn-danger remove-integer btn-sm"><i class="fa fa-minus"></i></button>
-							</div>
-						</div> -->
 					</div>
 					<button type="button" class="btn btn-dark" id="add-integer"><i class="fa fa-plus"></i></button>
 				</section>
@@ -100,25 +61,44 @@
 								<h5 class="text-white pb-2 border-bottom">Remove</h5>
 							</div>
 						</div>
-<!-- 						<div class="row d-flex align-items-center mb-4 mb-sm-3">
-							<div class="col-sm-4 col-6 mb-2 mb-sm-0">
-								<input type="text" name="bool_title_1" class="form-control" placeholder="Boolean Title"  required="required">
-							</div>
-							<div class="col-sm-4 col-6">
-								<div class="custom-control custom-checkbox">
-								    <input type="checkbox" name="boolean_default_1" class="custom-control-input" id="boolean_default_1">
-								    <label class="custom-control-label text-white" for="boolean_default_1">NULL</label>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6">
-								<button type="button" class="btn btn-danger remove-boolean btn-sm"><i class="fa fa-minus"></i></button>
-							</div>
-						</div> -->
 					</div>
 					<button type="button" class="btn btn-dark" id="add-boolean"><i class="fa fa-plus"></i></button>
 				</section>
 			</div>
-			<h4 class="mt-4">Multilingual fields</h4>
+			<div id="ml-fields-cont" class="mb-4">
+				<button type="button" class="btn btn-light d-flex align-items-center mb-3">
+					<span class="mr-2"><i class="fa fa-close fa-2x"></i></span>
+					<h3 class="m-0">Multilingual fields</h3>
+				</button>
+				<div id="ml-fields" class="border-left pl-4">
+					<section class="ml-date mb-3">
+							<div class="custom-control custom-checkbox">
+						    <input type="checkbox" class="custom-control-input" id="ml-date">
+						    <label class="custom-control-label" for="ml-date">Date Added</label>
+						</div>
+					</section>
+					<section class="varchars mb-4">
+						<h4>Varchars</h4>
+						<div class="varchars-rows container-fluid bg-dark px-2 py-3 mb-2">
+							<div class="row d-none d-sm-flex">
+								<div class="col-sm-3 col-6 mb-2">
+									<h5 class="text-white pb-2 border-bottom">Varchar Title</h5>
+								</div>
+								<div class="col-sm-3 col-6 mb-2">
+									<h5 class="text-white pb-2 border-bottom">Values</h5>
+								</div>
+								<div class="col-sm-3 col-6 mb-2">
+									<h5 class="text-white pb-2 border-bottom">Default</h5>
+								</div>
+								<div class="col-sm-3 col-6 mb-2">
+									<h5 class="text-white pb-2 border-bottom">Remove</h5>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn btn-dark" id="add-varchar"><i class="fa fa-plus"></i></button>
+					</section>
+				</div>
+			</div>
 			<input type="submit" value="Submit" class="btn btn-success mt-2">
 		</form>
 	</div>
