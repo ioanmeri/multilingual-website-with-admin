@@ -17,7 +17,7 @@
 						<span class="invalid-feedback"><?php echo $data['prefix_err']; ?></span>
 					</div>
 					<div class="custom-control custom-checkbox">
-					    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+					    <input type="checkbox" name="basicDate" class="custom-control-input" id="defaultUnchecked">
 					    <label class="custom-control-label" for="defaultUnchecked">Date Added</label>
 					</div>
 				</section>
@@ -71,7 +71,7 @@
 					<h3 class="m-0">Multilingual fields</h3>
 				</button>
 				<div id="ml-fields" class="border-left pl-4 d-none">
-					<!-- <input type="checkbox" name="mlEnabled" checked hidden> -->
+					<input type="checkbox" name="mlEnabled" hidden>
 					<section class="ml-date mb-3">
 							<div class="custom-control custom-checkbox">
 <!-- 						    <input type="checkbox" class="custom-control-input" id="ml-date">
