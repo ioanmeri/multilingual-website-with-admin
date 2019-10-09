@@ -1,7 +1,7 @@
 section.integers .integers-rows,
 section.booleans .booleans-rows,
-section.images .images-rows {
-/*#ml-fields {*/
+section.images .images-rows,
+section.varchars .varchars-rows {
 	display: none;
 }
 

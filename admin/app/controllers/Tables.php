@@ -53,6 +53,7 @@
 					$scriptFolder.'booleans',
 					$scriptFolder.'images',
 					$scriptFolder.'mlFields',
+					$scriptFolder.'varchars',
 				];
 				$data['style'] = 'tables/add';
 				$this->view('tables/add', $data);
