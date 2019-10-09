@@ -71,10 +71,11 @@
 					<h3 class="m-0">Multilingual fields</h3>
 				</button>
 				<div id="ml-fields" class="border-left pl-4 d-none">
+					<!-- <input type="checkbox" name="mlEnabled" checked hidden> -->
 					<section class="ml-date mb-3">
 							<div class="custom-control custom-checkbox">
-						    <input type="checkbox" class="custom-control-input" id="ml-date">
-						    <label class="custom-control-label" for="ml-date">Date Added</label>
+<!-- 						    <input type="checkbox" class="custom-control-input" id="ml-date">
+						    <label class="custom-control-label" for="ml-date">Date Added</label> -->
 						</div>
 					</section>
 					<section class="varchars mb-4">

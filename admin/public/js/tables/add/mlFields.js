@@ -1,22 +1,28 @@
 var el = {
 	btn: $('#endis-ml-fields'),
 	btnIcon: $('#endis-ml-fields span i'),
-	mlFields: $('#ml-fields')
-}
+	mlFields: $('#ml-fields'),
+	dateDiv: $('section.ml-date > div')
+};
 
-console.log(el);
+var markUp = {
+	date: `<input type="checkbox" class="custom-control-input" id="ml-date"><label class="custom-control-label" for="ml-date">Date Added</label>`,
+};
 
+/* Ml Fields Btn Controller */
 (function(){
 	$mlFieldsEnabled = false;
 
 	$('#endis-ml-fields').click(function(e){
 		if(!$mlFieldsEnabled){
 			mlFieldsEnDisBtn(1);
-			mlFieldsEnDis(1);
+			mlFieldsShow(1);
+			mlFieldsDate(1);
 			$mlFieldsEnabled = true;
 		}else{
 			mlFieldsEnDisBtn(0);
-			mlFieldsEnDis(0);
+			mlFieldsShow(0);
+			mlFieldsDate(0);
 			$mlFieldsEnabled = false;
 		}
 		
@@ -24,6 +30,13 @@ console.log(el);
 	})
 })()
 
+function mlFieldsShow($value){
+	if($value){
+		el.mlFields.removeClass('d-none');
+	}else{
+		el.mlFields.addClass('d-none');
+	}
+}
 
 function mlFieldsEnDisBtn($value){
 	if($value){
@@ -39,11 +52,10 @@ function mlFieldsEnDisBtn($value){
 	}
 }
 
-
-function mlFieldsEnDis($value){
+function mlFieldsDate($value){
 	if($value){
-		el.mlFields.removeClass('d-none');
+		el.dateDiv.append(markUp.date);
 	}else{
-		el.mlFields.addClass('d-none');
+		el.dateDiv.html('');
 	}
 }
