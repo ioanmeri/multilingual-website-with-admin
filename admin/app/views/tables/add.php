@@ -66,11 +66,11 @@
 				</section>
 			</div>
 			<div id="ml-fields-cont" class="mb-4">
-				<button type="button" class="btn btn-light d-flex align-items-center mb-3">
+				<button type="button" class="btn btn-light d-flex align-items-center mb-3" id="endis-ml-fields">
 					<span class="mr-2"><i class="fa fa-close fa-2x"></i></span>
 					<h3 class="m-0">Multilingual fields</h3>
 				</button>
-				<div id="ml-fields" class="border-left pl-4">
+				<div id="ml-fields" class="border-left pl-4 d-none">
 					<section class="ml-date mb-3">
 							<div class="custom-control custom-checkbox">
 						    <input type="checkbox" class="custom-control-input" id="ml-date">
