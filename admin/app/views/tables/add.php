@@ -16,9 +16,17 @@
 						<input type="text" name="prefix" class="form-control form-control-sm <?php echo empty($data['prefix_err']) ? '' : 'is-invalid'; ?>" value="<?php echo $data['prefix']; ?>"  required="required">
 						<span class="invalid-feedback"><?php echo $data['prefix_err']; ?></span>
 					</div>
-					<div class="custom-control custom-checkbox">
+					<div class="custom-control custom-checkbox  mr-4">
 					    <input type="checkbox" name="basicDate" class="custom-control-input" id="defaultUnchecked">
 					    <label class="custom-control-label" for="defaultUnchecked">Date Added</label>
+					</div>
+					<div class="custom-control custom-checkbox mr-4">
+					    <input type="checkbox" name="basicActive" class="custom-control-input" id="active">
+					    <label class="custom-control-label" for="active">Active</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					    <input type="checkbox" name="basicSortOrder" class="custom-control-input" id="sort_order">
+					    <label class="custom-control-label" for="sort_order">Sort Order</label>
 					</div>
 				</section>
 				<section class="images mb-4">

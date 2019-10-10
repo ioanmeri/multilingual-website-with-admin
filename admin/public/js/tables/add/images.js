@@ -3,7 +3,7 @@ function createImgRow(){
 		<div class="bg-light p-3 d-flex align-items-center flex-wrap mb-3">
 			<div class="form-group mr-4" style="max-width: 5rem;">
 				<label for="images">Number</label>
-				<input type="number" class="form-control form-control-sm" name="images" min="0" max="10" value="<?php echo $data['images']; ?>">
+				<input type="number" class="form-control form-control-sm" name="images" min="0" max="10" value="<?php echo $data['images']; ?>" required>
 				<span class="invalid-feedback"><?php echo $data['images']; ?></span>
 			</div>
 			<div class="custom-control custom-checkbox mr-4">
