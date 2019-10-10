@@ -49,6 +49,7 @@
 			}else {
 				$scriptFolder = 'tables/add/';
 				$data['scripts'] = [
+					$scriptFolder.'elements', 
 					$scriptFolder.'integers', 
 					$scriptFolder.'booleans',
 					$scriptFolder.'images',

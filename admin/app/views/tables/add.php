@@ -80,8 +80,12 @@
 				</button>
 				<div id="ml-fields" class="border-left pl-4 d-none">
 					<input type="checkbox" name="mlEnabled" hidden>
-					<section class="ml-date mb-3">
-							<div class="custom-control custom-checkbox">
+					<section class="ml-checkboxes mb-3 d-flex">
+						<div class="custom-control custom-checkbox ml-date mr-4">
+<!-- 						    <input type="checkbox" class="custom-control-input" id="ml-date">
+						    <label class="custom-control-label" for="ml-date">Date Added</label> -->
+						</div>
+						<div class="custom-control custom-checkbox ml-img-captions">
 <!-- 						    <input type="checkbox" class="custom-control-input" id="ml-date">
 						    <label class="custom-control-label" for="ml-date">Date Added</label> -->
 						</div>

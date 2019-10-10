@@ -27,11 +27,16 @@ function createImgRow(){
 	return $markUp;
 }
 
+
+
 (function () {
 	$areImagesVisible = false;
+	$captions = false;
+
+
 
 	/* Add Remove Images Button */
-	$('#add-remove-images').click(function(el){
+	$('#add-remove-images').click(function(e){
 		if(!$areImagesVisible){
 			$('.images-rows').show();
 			$('.images-rows').append(createImgRow());
@@ -39,6 +44,10 @@ function createImgRow(){
 			$('.images #add-remove-images').addClass('bg-danger');
 			$('.images #add-remove-images i').addClass('fa-minus');
 			$areImagesVisible = true;
+			if(!$captions){
+				el.imgCaptionsDiv.append(markUp.captionsCheck);
+				$captions = true;
+			}
 		}else{
 			$('.images-rows').hide();
 			$('.images-rows').html('');
@@ -46,6 +55,10 @@ function createImgRow(){
 			$('.images #add-remove-images').removeClass('bg-danger');
 			$('.images #add-remove-images i').addClass('fa-plus');
 			$areImagesVisible = false;
+			if($captions){
+				el.imgCaptionsDiv.html('');
+				$captions = false;
+			}
 		}
 	})
 

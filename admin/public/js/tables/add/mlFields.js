@@ -1,18 +1,7 @@
-var el = {
-	btn: $('#endis-ml-fields'),
-	btnIcon: $('#endis-ml-fields span i'),
-	mlFields: $('#ml-fields'),
-	mlFieldsActiveInput: $('input[name="mlEnabled"]'),
-	dateDiv: $('section.ml-date > div'),
-};
-
-var markUp = {
-	date: `<input type="checkbox" name="mlDate" class="custom-control-input" id="ml-date"><label class="custom-control-label" for="ml-date">Date Added</label>`,
-};
-
 /* Ml Fields Btn Controller */
 (function(){
 	$mlFieldsEnabled = false;
+	$captions = false;
 
 	$('#endis-ml-fields').click(function(e){
 		if(!$mlFieldsEnabled){
@@ -21,12 +10,21 @@ var markUp = {
 			mlFieldsShow(1);
 			mlFieldsDate(1);
 			$mlFieldsEnabled = true;
+			// if images are added -> add caption checkbox
+			if(!$captions && !$('.images-rows').html().trim() == ''){
+				el.imgCaptionsDiv.append(markUp.captionsCheck);
+				$captions = true;
+			}
 		}else{
 			mlFieldsEnDisBtn(0);
 			mlFieldsActiveInput(0);
 			mlFieldsShow(0);
 			mlFieldsDate(0);
 			$mlFieldsEnabled = false;
+			if($captions && $('.images-rows').html().trim() == ''){
+				el.imgCaptionsDiv.html('');
+				$captions = false;
+			}
 		}
 		
 		console.log($mlFieldsEnabled);
@@ -39,8 +37,6 @@ function mlFieldsActiveInput($value){
 	}else{
 		el.mlFieldsActiveInput.prop('checked', false);
 	}
-
-	console.log(el.mlFieldsActiveInput.prop('checked'), 'active ml fields');
 }
 
 
